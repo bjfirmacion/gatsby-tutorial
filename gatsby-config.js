@@ -3,6 +3,9 @@
  *
  * See: https://www.gatsbyjs.com/docs/gatsby-config/
  */
+require('dotenv').config({
+  path:`.env.${process.env.NODE_ENV}`
+})
 
 module.exports = {
   /* Your site config here */
@@ -10,8 +13,6 @@ module.exports = {
     title: 'Gatsby Tutorial',
     description: 'some random description',
     author: '@johndoe',
-    data: ['item 1', 'item 2'],
-    person: { name: 'Peter', age: 32 }
   },
   plugins: [
     {
@@ -35,6 +36,13 @@ module.exports = {
       },
     },
     `gatsby-transformer-sharp`, `gatsby-plugin-sharp`,
-    
+    {
+      resolve: `gatsby-source-contentful`,
+      options: {
+        spaceId: `w74nj5mqv756`,
+        // Learn about environment variables: https://gatsby.dev/env-vars
+        accessToken: process.env.ACCESS_TOKEN,
+      },
+    },
   ],
 }

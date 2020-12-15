@@ -7,12 +7,7 @@ const ComponentName = () => (
       {
         site {
           info: siteMetadata {
-            person {
-              age
-              name
-            }
             author
-            data
             description
             title
           }

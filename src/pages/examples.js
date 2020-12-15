@@ -21,12 +21,7 @@ export const data = graphql`
 query MyQuery {
   site {
     info:siteMetadata {
-      person {
-        age
-        name
-      }
       author
-      data
       description
       title
     }

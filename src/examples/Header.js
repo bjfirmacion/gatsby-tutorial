@@ -5,12 +5,7 @@ const getData = graphql`
   {
   site {
     info:siteMetadata {
-      person {
-        age
-        name
-      }
       author
-      data
       description
       title
     }
